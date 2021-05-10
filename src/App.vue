@@ -1,38 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <button @click="toggleModal">Open Modal</button>
-    <base-modal v-if="isShowModal" @close="toggleModal" />
+    <div id="nav" class="text-lg mb-12">
+      <router-link to="/">Home</router-link> <span class="mx-3">|</span>
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view />
 
     <portal-target name="modal" />
   </div>
 </template>
-
-<script>
-import BaseModal from './components/BaseModal.vue'
-
-export default {
-  name: 'App',
-  components: { BaseModal },
-  data: () => ({
-    isShowModal: false,
-  }),
-  methods: {
-    toggleModal() {
-      this.isShowModal = !this.isShowModal
-    },
-  },
-}
-</script>
 
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
 
-  @apply flex flex-col items-center;
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>
