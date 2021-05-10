@@ -1,0 +1,19 @@
+.modal {
+  @apply z-10 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full;
+
+  &__content {
+    @apply bg-white px-4 pt-4 pb-4 sm:p-5 sm:pb-5;
+  }
+
+  &__header {
+    @apply flex items-center justify-between mb-4 w-full;
+  }
+
+  &__footer {
+    @apply bg-gray-50 px-4 py-6 sm:px-6 sm:flex sm:flex-row-reverse;
+
+    &-cancel {
+      @apply inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:ring-blue-400 transition ease-in-out duration-150 sm:text-sm sm:leading-5;
+    }
+  }
+}
